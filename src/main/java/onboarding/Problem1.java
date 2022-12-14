@@ -4,14 +4,13 @@ import java.util.List;
 
 class Problem1 {
     public static int solution(List<Integer> pobi, List<Integer> crong) {
-        int answer = Integer.MAX_VALUE;
         if (!checkPageRange(pobi, crong) || !checkPageSequence(pobi, crong)) {
             return -1;
         }
         int pobiMaxNumber = getMaxNumber(pobi);
         int crongMaxNumber = getMaxNumber(crong);
 
-        return answer;
+        return getWinner(pobiMaxNumber, crongMaxNumber);
     }
 
     private static Boolean checkPageRange(List<Integer> pobi, List<Integer> crong) {
@@ -51,5 +50,15 @@ class Problem1 {
             pageNumber /= 10;
         }
         return product;
+    }
+
+    private static int getWinner(int pobiMaxNumber, int crongMaxNumber) {
+        if (pobiMaxNumber == crongMaxNumber) {
+            return 0;
+        }
+        if (Math.max(pobiMaxNumber, crongMaxNumber) == pobiMaxNumber) {
+            return 1;
+        }
+        return 2;
     }
 }
