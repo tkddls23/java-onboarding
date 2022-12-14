@@ -8,6 +8,9 @@ class Problem1 {
         if (!checkPageRange(pobi, crong) || !checkPageSequence(pobi, crong)) {
             return -1;
         }
+        int pobiMaxNumber = getMaxNumber(pobi);
+        int crongMaxNumber = getMaxNumber(crong);
+
         return answer;
     }
 
@@ -23,6 +26,13 @@ class Problem1 {
             return true;
         }
         return false;
+    }
+
+    private static int getMaxNumber(List<Integer> page) {
+        int pageMaxSumNumber = Math.max(addPageNumber(page.get(0)), addPageNumber(page.get(1)));
+        int pageMaxProductNumber = Math.max(multiplyPageNumber(page.get(0)), multiplyPageNumber(page.get(1)));
+
+        return Math.max(pageMaxSumNumber, pageMaxProductNumber);
     }
 
     private static int addPageNumber(int pageNumber) {
