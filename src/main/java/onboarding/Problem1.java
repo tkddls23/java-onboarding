@@ -35,11 +35,11 @@ class Problem1 {
     }
 
     private static int multiplyPageNumber(int pageNumber) {
-        int sum = 1;
+        int product = 1;
         while (pageNumber != 0){
-            sum *= (pageNumber % 10);
+            product *= (pageNumber % 10);
             pageNumber /= 10;
         }
-        return sum;
+        return product;
     }
 }
