@@ -33,4 +33,13 @@ class Problem1 {
         }
         return sum;
     }
+
+    private static int multiplyPageNumber(int pageNumber) {
+        int sum = 1;
+        while (pageNumber != 0){
+            sum *= (pageNumber % 10);
+            pageNumber /= 10;
+        }
+        return sum;
+    }
 }
