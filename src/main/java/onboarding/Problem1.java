@@ -24,4 +24,13 @@ class Problem1 {
         }
         return false;
     }
+
+    private static int addPageNumber(int pageNumber) {
+        int sum = 0;
+        while (pageNumber != 0){
+            sum += (pageNumber % 10);
+            pageNumber /= 10;
+        }
+        return sum;
+    }
 }
